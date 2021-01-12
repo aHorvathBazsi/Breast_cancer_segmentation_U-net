@@ -1,3 +1,7 @@
+"""
+Train.py is used to train the U-net model. Before the traing we have to specify a number of hiperparameters.
+"""
+
 import os
 import random
 import numpy as np
@@ -31,9 +35,12 @@ WIDTH_SHIFT = 0.1
 HEIGHT_SHIFT = 0.1
 SPLIT_RATIO = 0.8
 BATCH_SIZE = 16
+LEARNING_RATE = 5e-3;
 
 def plot_metrics(results):
-
+"""
+Using the metrics logged in results variable, the function plots accuracy and loss against number of epochs.
+"""
 	acc = results.history['accuracy']
 	val_acc = results.history['val_accuracy']
 	loss = results.history['loss']
@@ -63,7 +70,7 @@ def save_model(model,saving_name, saving_path):
 
 def main():
 
-	model = create_U_net(INPUT_WIDTH,INPUT_HEIGHT,IMG_CHANNEL)
+	model = create_U_net(INPUT_WIDTH,INPUT_HEIGHT,IMG_CHANNEL,LEARNING_RATE)
 
 	data_info = create_dataset(
 		train_image_path = TRAIN_IMAGES,

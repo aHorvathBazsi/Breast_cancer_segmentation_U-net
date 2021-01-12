@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-def create_U_net(input_width, input_height, img_channels):
+def create_U_net(input_width, input_height, img_channels, learning_rate=5e-3):
 
 	"""
 	Create a U-net architecture having an input size of input_width x input_height x img_channels
@@ -15,7 +15,7 @@ def create_U_net(input_width, input_height, img_channels):
 		Please note that the skip-connections are created using layers.concatenate; The last layer has just 1 filter and a 'sigmoid'
 		activatation function (remember, we want to make segmentation);
 
-	The model is compiled using Adam optimizer with learning rate of 5e-3 and binary_crossentropy loss
+	The model is compiled using Adam optimizer with a default learning rate of 5e-3 and binary_crossentropy loss
 
 	"""
 
@@ -78,7 +78,7 @@ def create_U_net(input_width, input_height, img_channels):
 	outputs = tf.keras.layers.Conv2D(1, (1,1), activation = 'sigmoid')(conv9)
 
 	model = tf.keras.Model(inputs = [inputs], outputs = [outputs])
-	optimizer = tf.keras.optimizers.Adam(learning_rate=5e-3)
+	optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
 	model.compile(optimizer = optimizer, loss='binary_crossentropy', metrics = ['accuracy'])
 
 	return model
