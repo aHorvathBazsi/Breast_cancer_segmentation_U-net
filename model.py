@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-def create_U-net(input_width, input_height, img_channels):
+def create_U_net(input_width, input_height, img_channels):
 
 	"""
 	Create a U-net architecture having an input size of input_width x input_height x img_channels
