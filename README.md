@@ -9,4 +9,4 @@ The repository contains the following files:
 - model.py: implementation of U-net using Tensorflow framework
 - predict.py: prediction for test images (path for test images can be specified for custom use)
 
-### Please note that the code is not fully functional yet. Each individual .py is correct, but I want to connect them in a more efficient way. If you have any suggestions please do not hesitate to contact me or clone the repo and try to find ways to upgrade the code.
+### Please note that the code is not fully functional yet. Each individual .py is correct, but I want to connect them in a more efficient way. If you have any suggestions please do not hesitate to contact me or clone the repo and give it a try.
