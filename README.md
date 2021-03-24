@@ -1,4 +1,4 @@
-# Breast cancer segmentation using U-net
+# Breast cancer segmentation using U-net (Tensorflow)
 
 ## This repository contains the followings: implementation of U-net architecture, training of the model and prediction on test images. Please note that the dataset is not provided because it is private.
 
